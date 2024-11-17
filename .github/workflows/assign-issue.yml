@@ -1,0 +1,15 @@
+name: Assign Issue
+on:
+  issues:
+    types: [opened]  # This triggers the workflow when a new issue is created
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest  # The workflow runs on the latest version of Ubuntu
+
+    steps:
+      - name: Assign Issue
+        uses: actions-ecosystem/action-assign@v2  # Reusable GitHub Action for assigning issues
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}  # Default token provided by GitHub for authentication
+          assignees: danielocalle # Replace with the actual GitHub username
